@@ -9,10 +9,10 @@ const AdminDashboard = () => {
 
   const fetchData = async () => {
     const [userRes, bookingRes] = await Promise.all([
-      axios.get('http://localhost:4000/api/admin/users', {
+      axios.get('http://34.129.26.184/api/admin/users', {
         headers: { Authorization: `Bearer ${token}` },
       }),
-      axios.get('http://localhost:4000/api/admin/bookings', {
+      axios.get('http://34.129.26.184/api/admin/bookings', {
         headers: { Authorization: `Bearer ${token}` },
       }),
     ]);
@@ -22,7 +22,7 @@ const AdminDashboard = () => {
 
   const updateStatus = async (bookingId, newStatus) => {
     await axios.put(
-      `http://localhost:4000/api/admin/bookings/${bookingId}/status`,
+      `http://34.129.26.184/api/admin/bookings/${bookingId}/status`,
       { status: newStatus },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -36,7 +36,6 @@ const AdminDashboard = () => {
   return (
     <div>
       <h2>Admin Dashboard</h2>
-        <h2>Admin Dashboard</h2>
             <LogoutButton />
 
       <h3>Users</h3>

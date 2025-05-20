@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     const endpoint = mode === 'login' ? '/api/auth/login' : '/api/auth/register';
     try {
-      const res = await axios.post(`http://localhost:4000${endpoint}`, { email, password });
+      const res = await axios.post(`http://34.129.26.184${endpoint}`, { email, password });
 
       // If login, decode JWT and redirect
       if (mode === 'login') {

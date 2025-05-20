@@ -9,19 +9,21 @@ spec:
       app: taxi-app
   template:
     metadata:
+      annotations:
+        logging.googleapis.com/logging: "true"
       labels:
         app: taxi-app
     spec:
       containers:
         - name: taxi-container
-          image: musahx/taxi-app:latest
+          image: musahx/taxi-app:prod-v1
           ports:
             - containerPort: 4000
           env:
             - name: PORT
               value: "4000"
             - name: MONGO_URI
-              value: mongodb+srv://musa:musa@taxi-app.ipqtcfy.mongodb.net/taxiapp?retryWrites=true&w=majority&appName=taxi-app
+              value: mongodb://root:root@mongo:27017
             - name: JWT_SECRET
               value: supersecretkey
             - name: EMAIL_FROM
