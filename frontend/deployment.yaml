@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taxi-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taxi-frontend
+  template:
+    metadata:
+      labels:
+        app: taxi-frontend
+    spec:
+      containers:
+        - name: taxi-frotend-container
+          image: musahx/taxi-frontend
+          ports:
+            - containerPort: 80

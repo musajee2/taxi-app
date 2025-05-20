@@ -10,7 +10,7 @@ const UserDashboard = () => {
   const token = localStorage.getItem('token');
 
   const fetchBookings = async () => {
-    const res = await axios.get('http://localhost:4000/api/bookings', {
+    const res = await axios.get('http://34.129.26.184/api/bookings', {
       headers: { Authorization: `Bearer ${token}` },
     });
     setBookings(res.data);
@@ -19,7 +19,7 @@ const UserDashboard = () => {
   const createBooking = async (e) => {
     e.preventDefault();
     await axios.post(
-      'http://localhost:4000/api/bookings',
+      'http://34.129.26.184/api/bookings',
       { pickupLocation, dropoffLocation },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -29,7 +29,7 @@ const UserDashboard = () => {
   };
 
   const deleteBooking = async (id) => {
-    await axios.delete(`http://localhost:4000/api/bookings/${id}`, {
+    await axios.delete(`http://34.129.26.184/api/bookings/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchBookings();
@@ -43,8 +43,6 @@ const UserDashboard = () => {
     <div>
         <h2>User Dashboard</h2>
         <LogoutButton />
-
-      <h2>User Dashboard</h2>
       <form onSubmit={createBooking}>
         <input value={pickupLocation} onChange={(e) => setPickupLocation(e.target.value)} placeholder="Pickup" required />
         <input value={dropoffLocation} onChange={(e) => setDropoffLocation(e.target.value)} placeholder="Dropoff" required />
