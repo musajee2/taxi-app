@@ -25,7 +25,7 @@ taxi-app/
 ### ✅ Built With:
 - Node.js + Express.js (API)
 - React (Frontend)
-- MongoDB Atlas (Database)
+- MongoDB Atlas (Database) -> MongoDB Deployment (mongo:6)
 - Docker + DockerHub (Image hosting)
 - Google Kubernetes Engine (Deployment)
 - Vite (Frontend bundler)
@@ -52,6 +52,11 @@ docker push musahx/taxi-app:prod-v4
 ```bash
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
+kubectl apply -f ./frontend/deployment.yaml
+kubectl apply -f ./frontend/service.yaml
+kubectl apply -f ./mongo/mongo-pvc.yaml
+kubectl apply -f ./mongo/mongo-deployment.yaml
+kubectl apply -f ./mongo/mongo-service.yaml
 ```
 
 Access via:
