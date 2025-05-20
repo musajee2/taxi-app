@@ -69,7 +69,7 @@ Ensure MONGO_URI is set in `.env` or directly in Kubernetes deployment.
 
 ```env
 PORT=4000
-MONGO_URI=mongodb+srv://musa:musa@taxi-app.ipqtcfy.mongodb.net/taxiapp
+MONGO_URI=mongodb://root:root@mongo:27017
 JWT_SECRET=supersecretkey
 EMAIL_FROM=musajee10122002@gmail.com
 EMAIL_PASS=your-app-password
